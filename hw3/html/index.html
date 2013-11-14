@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HW3</title>
+		<link href="bootstrap.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span12">
+
+
+					<h3>Part A</h3>
+					The Scree Plot Obtained is as follows.
+					<img src="partA.png">
+					<b>Explanation for Dimension</b> Since the residual error does not fall significantly for dimensions above 2, we can say that the higher dimensions are not significant and thus dimensionality of the data is 2.<br><br>
+					<b>Source File in Code:</b> A_B_C_D.m &nbsp;,&nbsp; Isomap_a_b_c_d
+
+
+
+					<h3>Part B</h3>
+					2-D Embeddings plot is as below
+					<img src ="partB.png">
+					<b>Source File in Code:</b> A_B_C_D.m &nbsp;,&nbsp; Isomap_a_b_c_d
+
+
+
+					<h3>Part C</h3>
+					<h4>Variation of Theta1</h4>
+					<img src = "partC1.png">	
+					Here Theta2 values are almost constant and Theta1 varies as we move along the circumference of the torus.
+					<h4>Variation of Theta2</h4>
+					<img src = "partC2.png">	
+					A highly magnified image of this is as below.
+					<img src = "partC3.png">	
+					Here Theta1 values are almost constant and Theta2 varies as we move along the radial direction.<br><br>
+					Theta1 (base angle) varies along the circumference of the torus and Theta2 varies along the radius of torus.
+					This is what we expect of a robotic arm with two revolute joints. Thus we can say that the manifold captures the topology of robot's motion space.<br><br>
+					
+					<b>Source File in Code:</b> A_B_C_D.m &nbsp;,&nbsp; Isomap_a_b_c_d
+
+
+
+					<h3>Part D</h3>
+					The observed maninfold is torus.Following are some of the views of the 3-D Embedding of the data.
+					<img src = "partD1.png">
+					<img src = "partD2.png">	
+					<img src = "partD3.png">
+					<img src = "partD4.png">
+					<b>Source File in Code:</b> A_B_C_D.m &nbsp;,&nbsp; Isomap_a_b_c_d
+
+
+
+					<h3>Part E</h3>
+					Neural Fitting Tool was with 70% training, 15% validation and 15% test data was used against the given dataset for making the following comparisons.<br><br>
+					The convergence is faster when training is from embeddings to sines-cosines. Certainly these are the intrinsic parameters of the data and these will be learnt faster by the learning algoithm. The images on the other hand contain large number (30K values corresponding to each image,when each image is resized as [100 100]) of features that are not actually useful and which are needed to be filtered out.<br>
+					Following are the performance curves of the training of the given data set.
+					<h4>For 2-D embeddings to sines-cosines </h4>
+					<img src="partE1.png">
+					<h4>For images to sines-cosines </h4>
+					<img src="partE2.png">
+					<b>Source File in Code:</b> E.m &nbsp;,&nbsp; Isomap_f. For the neural network part, built-in tools from Matlab were used.
+
+
+
+					<h3>Part F</h3>
+					Images in which the bot touched the obstacle were found as follows:
+					<ol>
+						<li>Found the pixels which corresponded to the obstacle. This was done by detecting pixels with (r,g,b) values as (0,255,0)</li>
+						<li>For every image if the above found pixels were not black, bot in the image was considered intersecting with the obstacle.</li>
+					</ol>	
+					Further, the above plot was obtained by only plotting non intersecting images.<br>
+					Edges corresponding to intersecting images were given very large (practically infinite) weights to remove them from the path calculations. The shortest path was then calculated.	
+					The path is depicted by blue coloured edges.
+					<img src="partF.png">
+					<b>Source File in Code:</b> F.m &nbsp;,&nbsp; Isomap_f	
+
+
+
+					<h3>Part G</h3>
+					Process similar to part F with second obstacle image was carried out to obtain the following plot.<br>
+					But there are not many nodes affected by the obstacle this time. The path that is discovered is not much altered. In Part F the positon of object was such that the robot had to go from the opposite but it is not the case this time, so the bot manages to avoid the obstacle without following a longer path. So even when the initial and final configuration of bot is same in both cases, the position of obstacle alters the path by great deal.<br>
+					<b>NOTE:</b> Since the number of points that are removed are too less, i have shown them in black rather than not showing them in plot.
+					<img src="partG1.png">
+					<h4>Above path shown in 3-D Embedding in two different views</h4>
+					<img src = "partG2.png">
+					<img src = "partG3.png">	
+					<b>Source File in Code:</b> G.m &nbsp;,&nbsp; Isomap_g<br><br>
+					
+
+
+					<h3>Source Code</h3>
+					<a href="code.zip">This</a> is the link to the source code.
+
+					<h3>Acknowledgement</h3>
+					I have used the Isomap Code made available at <a href = "http://web.mit.edu/cocosci/isomap/code/Isomap.m"> this </a>page.<br>
+					Code for loading the images was taken from resources of previous offering of this course made available at <a href="http://www.cse.iitk.ac.in/users/cs365/2012/hw2.html">this </a> page.<br><br><br>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>	 
